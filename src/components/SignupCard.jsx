@@ -7,7 +7,6 @@ import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 const SignupCard = () => {
@@ -35,18 +34,29 @@ const SignupCard = () => {
     }
 
     try {
-      const response = await axios.post(
+      const response = await fetch(
         `https://voxdebate.onrender.com/api/v1/users/register`,
-        { name: username, email, password },
-        { withCredentials: true }
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include", // Ensure cookies are sent
+          body: JSON.stringify({ name: username, email, password }),
+        }
       );
 
-      if (response.data) {
-        setUserInfo(response.data);
+      if (response.ok) {
+        const data = await response.json();
+        setUserInfo(data);
         toast.success("Signup successful! Redirecting to homepage...", {
           autoClose: 2000,
         });
         navigate("/");
+      } else {
+        toast.error("An unexpected error occurred. Please try again.", {
+          autoClose: 2000,
+        });
       }
     } catch (error) {
       console.error("Error:", error);
