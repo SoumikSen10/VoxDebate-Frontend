@@ -33,12 +33,15 @@ const LoginCard = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/users/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-        credentials: "include",
-      });
+      const response = await fetch(
+        `https://voxdebate.onrender.com/api/v1/users/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+          credentials: "include",
+        }
+      );
 
       if (!response.ok) {
         if (response.status === 401) {

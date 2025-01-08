@@ -40,7 +40,7 @@ const AppSidebar = (props) => {
     const fetchProfile = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v1/users/profile",
+          "https://voxdebate.onrender.com/api/v1/users/profile",
           { withCredentials: true }
         );
         if (response.status === 200) {
@@ -78,7 +78,7 @@ const AppSidebar = (props) => {
     setTimeout(async () => {
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/v1/users/logout",
+          "https://voxdebate.onrender.com/api/v1/users/logout",
           {},
           { withCredentials: true }
         );

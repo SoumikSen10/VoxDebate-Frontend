@@ -36,7 +36,7 @@ const SignupCard = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/v1/users/register`,
+        `https://voxdebate.onrender.com/api/v1/users/register`,
         { name: username, email, password },
         { withCredentials: true }
       );

@@ -117,7 +117,7 @@ const PlaygroundCard = () => {
 
     try {
       const emotionRes = await fetch(
-        "http://localhost:8000/api/v1/services/emotion-detection",
+        "https://voxdebate.onrender.com/api/v1/services/emotion-detection",
         {
           method: "POST",
           body: formData,
@@ -181,7 +181,7 @@ const PlaygroundCard = () => {
       });
 
       const debateRes = await fetch(
-        "http://localhost:8000/api/v1/services/debate",
+        "https://voxdebate.onrender.com/api/v1/services/debate",
         {
           method: "POST",
           body: debateFormData,
