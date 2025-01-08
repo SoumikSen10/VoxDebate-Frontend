@@ -34,7 +34,7 @@ const LoginCard = () => {
 
     try {
       const response = await fetch(
-        `https://voxdebate.onrender.com/api/v1/users/login`,
+        "https://voxdebate.onrender.com/api/v1/users/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
