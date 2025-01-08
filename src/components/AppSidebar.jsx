@@ -22,7 +22,6 @@ import { NavUser } from "./NavUser";
 import { UserContext } from "../context/UserContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -39,14 +38,16 @@ const AppSidebar = (props) => {
 
     const fetchProfile = async () => {
       try {
-        const response = await axios.get(
+        const response = await fetch(
           "https://voxdebate.onrender.com/api/v1/users/profile",
           {
+            method: "GET",
             credentials: "include",
           }
         );
         if (response.status === 200) {
-          setUserInfo(response.data);
+          const data = await response.json();
+          setUserInfo(data);
         } else {
           setUserInfo(null);
           toast.warn("Unable to load profile. Please log in.", {
@@ -79,12 +80,12 @@ const AppSidebar = (props) => {
 
     setTimeout(async () => {
       try {
-        const response = await axios.post(
+        const response = await fetch(
           "https://voxdebate.onrender.com/api/v1/users/logout",
-          {},
           {
-          credentials: "include",
-        },
+            method: "POST",
+            credentials: "include",
+          }
         );
         if (response.status === 200) {
           setUserInfo(null); // Clear user info
