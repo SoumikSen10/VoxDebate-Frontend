@@ -41,7 +41,9 @@ const AppSidebar = (props) => {
       try {
         const response = await axios.get(
           "https://voxdebate.onrender.com/api/v1/users/profile",
-          credentials: "include",
+         {
+    withCredentials: true,
+  },
         );
         if (response.status === 200) {
           setUserInfo(response.data);
@@ -80,7 +82,9 @@ const AppSidebar = (props) => {
         const response = await axios.post(
           "https://voxdebate.onrender.com/api/v1/users/logout",
           {},
-          credentials: "include",
+          {
+    withCredentials: true,
+  },
         );
         if (response.status === 200) {
           setUserInfo(null); // Clear user info
