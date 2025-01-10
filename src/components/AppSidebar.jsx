@@ -50,9 +50,6 @@ const AppSidebar = (props) => {
           setUserInfo(data);
         } else {
           setUserInfo(null);
-          toast.warn("Unable to load profile. Please log in.", {
-            autoClose: 2000,
-          });
         }
       } catch (error) {
         console.error("Error fetching profile:", error);

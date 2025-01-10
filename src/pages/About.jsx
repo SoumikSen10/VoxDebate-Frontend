@@ -46,16 +46,6 @@ const About = () => {
           className="space-y-6"
         >
           <motion.div
-            className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-indigo-800 dark:from-indigo-800 dark:via-indigo-700 dark:to-indigo-600 p-6 rounded-lg shadow-lg text-white cursor-pointer"
-            whileHover={{ scale: 1.05 }}
-          >
-            <h3 className="text-xl font-bold">Voice Sentiment Analysis</h3>
-            <p>
-              Enhance accuracy by analyzing the tone and emotion of the user’s
-              voice.
-            </p>
-          </motion.div>
-          <motion.div
             className="bg-gradient-to-r from-teal-600 via-teal-700 to-teal-800 dark:from-teal-800 dark:via-teal-700 dark:to-teal-600 p-6 rounded-lg shadow-lg text-white cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
