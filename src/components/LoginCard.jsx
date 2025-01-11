@@ -79,12 +79,7 @@ const LoginCard = () => {
       <form className="space-y-6" onSubmit={login}>
         {/* Email Field */}
         <div className="flex flex-col">
-          <Label
-            htmlFor="email"
-            className={`text-sm mb-2 ${
-              theme === "dark" ? "text-gray-300" : "text-gray-800"
-            }`}
-          >
+          <Label htmlFor="email" className="text-sm mb-2 text-gray-300">
             Sign in with email address
           </Label>
           <Input
@@ -92,23 +87,14 @@ const LoginCard = () => {
             type="email"
             placeholder="Enter email"
             value={email}
-            className={`rounded-full px-4 py-3 focus:ring-2 focus:ring-orange-500 text-sm md:text-base ${
-              theme === "dark"
-                ? "bg-[#2a1a3e] text-white placeholder-gray-400"
-                : "bg-gray-100 text-gray-900 placeholder-gray-500"
-            }`}
+            className="rounded-full px-4 py-3 bg-[#2a1a3e] text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 text-sm md:text-base"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
         {/* Password Field */}
         <div className="flex flex-col relative">
-          <Label
-            htmlFor="password"
-            className={`text-sm mb-2 ${
-              theme === "dark" ? "text-gray-300" : "text-gray-800"
-            }`}
-          >
+          <Label htmlFor="password" className="text-sm mb-2 text-gray-300">
             Enter password
           </Label>
           <div className="relative">
@@ -117,11 +103,7 @@ const LoginCard = () => {
               type={showPassword ? "text" : "password"}
               value={password}
               placeholder="Enter password"
-              className={`rounded-full px-4 py-3 focus:ring-2 focus:ring-orange-500 text-sm md:text-base w-full pr-12 ${
-                theme === "dark"
-                  ? "bg-[#2a1a3e] text-white placeholder-gray-400"
-                  : "bg-gray-100 text-gray-900 placeholder-gray-500"
-              }`}
+              className="rounded-full px-4 py-3 bg-[#2a1a3e] text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 text-sm md:text-base w-full pr-12"
               onChange={(e) => setPassword(e.target.value)}
             />
             <button
@@ -159,11 +141,7 @@ const LoginCard = () => {
       </Button>
 
       {/* Footer */}
-      <p
-        className={`text-center text-xs mt-6 ${
-          theme === "dark" ? "text-gray-400" : "text-gray-600"
-        }`}
-      >
+      <p className="text-center text-xs text-gray-400 mt-6">
         By logging in, you agree to our{" "}
         <span className="underline">Terms and Conditions</span>.
       </p>
