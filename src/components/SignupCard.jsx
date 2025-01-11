@@ -75,7 +75,10 @@ const SignupCard = () => {
       <form className="space-y-6" onSubmit={signup}>
         {/* Username Field */}
         <div className="flex flex-col">
-          <Label htmlFor="username" className="text-sm mb-2 text-gray-300">
+          <Label
+            htmlFor="username"
+            className="text-sm mb-2 text-gray-700 dark:text-gray-300"
+          >
             Choose a username
           </Label>
           <Input
@@ -84,13 +87,16 @@ const SignupCard = () => {
             placeholder="Enter username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="rounded-full px-4 py-3 bg-[#2a1a3e] text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 text-sm md:text-base"
+            className="rounded-full px-4 py-3 bg-white dark:bg-[#2a1a3e] text-gray-700 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 text-sm md:text-base"
           />
         </div>
 
         {/* Email Field */}
         <div className="flex flex-col">
-          <Label htmlFor="email" className="text-sm mb-2 text-gray-300">
+          <Label
+            htmlFor="email"
+            className="text-sm mb-2 text-gray-700 dark:text-gray-300"
+          >
             Enter a valid email address
           </Label>
           <Input
@@ -99,13 +105,16 @@ const SignupCard = () => {
             placeholder="Enter email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="rounded-full px-4 py-3 bg-[#2a1a3e] text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 text-sm md:text-base"
+            className="rounded-full px-4 py-3 bg-white dark:bg-[#2a1a3e] text-gray-700 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 text-sm md:text-base"
           />
         </div>
 
         {/* Password Field */}
         <div className="flex flex-col relative">
-          <Label htmlFor="password" className="text-sm mb-2 text-gray-300">
+          <Label
+            htmlFor="password"
+            className="text-sm mb-2 text-gray-700 dark:text-gray-300"
+          >
             Enter password
           </Label>
           <div className="relative">
@@ -115,8 +124,8 @@ const SignupCard = () => {
               value={password}
               placeholder="Enter password"
               onChange={(e) => setPassword(e.target.value)}
-              className="rounded-full px-4 py-3 bg-[#2a1a3e] text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 text-sm md:text-base w-full pr-12"
-              autoComplete="off" // Disables autofill for password field
+              className="rounded-full px-4 py-3 bg-white dark:bg-[#2a1a3e] text-gray-700 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 text-sm md:text-base w-full pr-12"
+              autoComplete="off"
             />
             <button
               type="button"
@@ -136,7 +145,7 @@ const SignupCard = () => {
         <div className="flex flex-col relative">
           <Label
             htmlFor="confirm-password"
-            className="text-sm mb-2 text-gray-300"
+            className="text-sm mb-2 text-gray-700 dark:text-gray-300"
           >
             Confirm password
           </Label>
@@ -147,8 +156,8 @@ const SignupCard = () => {
               value={confirmPassword}
               placeholder="Re-enter password"
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="rounded-full px-4 py-3 bg-[#2a1a3e] text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 text-sm md:text-base w-full pr-12"
-              autoComplete="off" // Disables autofill for confirm password field
+              className="rounded-full px-4 py-3 bg-white dark:bg-[#2a1a3e] text-gray-700 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 text-sm md:text-base w-full pr-12"
+              autoComplete="off"
             />
             <button
               type="button"
@@ -174,7 +183,7 @@ const SignupCard = () => {
       </form>
 
       {/* Footer */}
-      <p className="text-center text-xs text-gray-400 mt-6">
+      <p className="text-center text-xs text-gray-700 dark:text-gray-400 mt-6">
         By registering, you agree to our{" "}
         <span className="underline">Terms and Conditions</span>.
       </p>
